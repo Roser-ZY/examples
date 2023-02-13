@@ -7,3 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(quick_sort
 		"quick_sort.cpp"
 	)
+add_executable(insert_sort
+		"insert_sort.cpp"
+	)
+
