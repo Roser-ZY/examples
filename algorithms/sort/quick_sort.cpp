@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-int part_sort(int nums[], int l, int r){
+int part_sort(vector<int>& nums, int l, int r){
 	int target = nums[l];
 	int m = l;
 	while(l < r){
@@ -18,7 +18,7 @@ int part_sort(int nums[], int l, int r){
 	return m;
 }
 
-void quick_sort(int nums[], int l, int r){
+void quick_sort(vector<int>& nums, int l, int r){
 	if(l >= r) return;
 
 	int m = part_sort(nums, l, r);
@@ -26,13 +26,3 @@ void quick_sort(int nums[], int l, int r){
 	quick_sort(nums, l, m - 1);
 }
 
-int main(){
-	int nums[10] = {10, 9, 7, 4, 3, 2, 8, 6, 5, 1};
-	quick_sort(nums, 0, 9);
-
-	for(int i = 0; i < 10; ++i){
-		cout << nums[i] << ' ';
-	}
-
-	return 0;
-}

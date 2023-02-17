@@ -4,12 +4,21 @@ project(sort VERSION 1.0)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(quick_sort
-		"quick_sort.cpp"
+add_library(sort
+	SHARED
+	"quick_sort.cpp"
+	"insert_sort.cpp"
+	"shell_sort.cpp"
 	)
-add_executable(insert_sort
-		"insert_sort.cpp"
+
+add_executable(verify_correctness
+	"verify/verify_correctness.cpp"
 	)
-add_executable(shell_sort
-		"shell_sort.cpp"
+target_include_directories(verify_correctness
+	PRIVATE
+	"./"
+	)
+target_link_libraries(verify_correctness
+	PRIVATE
+	sort
 	)

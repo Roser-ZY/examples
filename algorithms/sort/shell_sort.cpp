@@ -25,14 +25,3 @@ void shell_sort(vector<int>& nums){
 		h /= 3;
 	}
 }
-
-int main(){
-	vector<int> nums = {4, 6, 1, 9, 2, 8, 3, 5, 7, 0};
-	shell_sort(nums);
-
-	for(int num : nums){
-		cout << num << " ";
-	}
-
-	return 0;
-}
